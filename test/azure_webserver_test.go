@@ -10,7 +10,7 @@ import (
 
 // You normally want to run this under a separate "Testing" subscription
 // For lab purposes you will use your assigned subscription under the Cloud Dev/Ops program tenant
-var subscriptionID string = "<your-subscription-id>"
+var subscriptionID string = "7a5d5ef8-3d16-4013-a13a-970f033f476e"
 
 func TestAzureLinuxVMCreation(t *testing.T) {
 	terraformOptions := &terraform.Options{
@@ -18,7 +18,7 @@ func TestAzureLinuxVMCreation(t *testing.T) {
 		TerraformDir: "../",
 		// Override the default terraform variables
 		Vars: map[string]interface{}{
-			"labelPrefix": "<your-college-username>",
+			"labelPrefix": "sola0050",
 		},
 	}
 
@@ -45,4 +45,5 @@ func TestAzureLinuxVMCreation(t *testing.T) {
 	expectedOSVersion := "22_04-lts-gen2"
 	assert.Equal(t, expectedOSPublisher, vmImage.Publisher)
 	assert.Equal(t, expectedOSVersion, vmImage.SKU)
+	
 }
